@@ -1,0 +1,15 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  gap: 3rem;
+}
+
+.horizontal-line {
+  border: 2px solid var(--clr-dark);
+  border-radius: 25px;
+  max-width: 1120px;
+  width: 90vw;
+}
