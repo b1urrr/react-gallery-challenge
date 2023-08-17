@@ -3,7 +3,7 @@ import "./App.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import { SearchBar, Gallery, Header } from "./components";
-const API_KEY = "lCHQsmcJx1rKR7nLkpCExi_eppQ4LSbbVYmX1lokpGo";
+const API_KEY = "INSERT_API_KEY_HERE";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("space");
