@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import {
   BsXLg,
@@ -6,17 +6,17 @@ import {
   BsArrowLeftCircle,
   BsArrowRightCircle,
   BsFillHandThumbsUpFill,
-  BsFillHandThumbsDownFill,
 } from "react-icons/bs";
 
-const SingleImage = ({ photo, photos }) => {
+const SingleImage = ({ photo, photos, index }) => {
   const { urls, all_description, id, likes } = photo;
   const [openModal, setOpenModal] = useState(false); // Controls Modal Open/Close
   const [slideNumber, setSlideNumber] = useState(0); // Controls the current image slide number
   const [updatedLikes, setUpdatedLikes] = useState(likes); // Controls the likes, initially available in the API data
   const [buttonClicked, setButtonClicked] = useState(false); // Like/unlike functionality
 
-  const handleOpenModal = () => {
+  const handleOpenModal = (index) => {
+    setSlideNumber(index)
     setOpenModal(true);
   };
 
@@ -61,7 +61,7 @@ const SingleImage = ({ photo, photos }) => {
       )}
       <div className="container">
         <img className="photo" src={urls.small} alt={all_description} />
-        <div className="overlay-image" onClick={handleOpenModal}>
+        <div className="overlay-image" onClick={() => handleOpenModal(index)}>
           <BsSearch />
         </div>
       </div>

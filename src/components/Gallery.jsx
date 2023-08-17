@@ -12,8 +12,8 @@ const Gallery = ({ photos }) => {
           </h2>
         </div>
       ) : null}
-      {photos.map((photo) => {
-        return <SingleImage key={photo.id} photo={photo} photos={photos} />;
+      {photos.map((photo, index) => {
+        return <SingleImage key={photo.id} index={index} photo={photo} photos={photos} />;
       })}
     </Wrapper>
   );
